@@ -1,0 +1,37 @@
+mixin input(type, name, text, checked)
+  if type === 'checkbox'
+    .catalog-filter__box
+      input.catalog-filter__checkbox(name=name id=name checked=checked type=type)
+      label.catalog-filter__label(for=name) #{text}
+  if type === 'radio'
+    .catalog-filter__box.catalog-filter__box--radio
+      input.catalog-filter__radio&attributes(attributes)(value=name id=name checked=checked type=type )
+      label.catalog-filter__label(for=name) #{text}
+
+.catalog-filter
+  form.catalog-filter__form
+    fieldset.catalog-filter__fieldset
+      p.catalog-filter__legend Категория
+      +input('checkbox', 'fiction', 'Художественная литература')
+      +input('checkbox', 'education', 'Образование', true)
+      +input('checkbox', 'science-and-technology', 'Наука и техника')
+      +input('checkbox', 'society', 'Общество')
+      +input('checkbox', 'business-literature', 'Деловая литература')
+      +input('checkbox', 'health', 'Здоровье')
+      +input('checkbox', 'hobby', 'Увлечения', true)
+      +input('checkbox', 'psychology', 'Психология')
+      +input('checkbox', 'esoterics', 'Эзотерика')
+      +input('checkbox', 'philosophy', 'Философия и религия')
+      +input('checkbox', 'art', 'Искусство', true)
+
+    fieldset.catalog-filter__fieldset
+      p.catalog-filter__legend Статус
+      +input('radio', 'bestsellers', 'Хиты продаж')(name= 'status')
+      +input('radio', 'news-books', 'Новинки', true)(name= 'status')
+      +input('radio', 'preorder', 'Предзаказ')(name= 'status')
+
+    fieldset.catalog-filter__fieldset
+      p.catalog-filter__legend Наличие
+      +input('radio', 'in-the-shop', 'В магазине')(name= 'availability')
+      +input('radio', 'in-the-internet-shop', 'В интернет-магазине', true)(name= 'availability')
+      +input('radio', 'under-the-order', 'Под заказ')(name= 'availability')

@@ -1,0 +1,18 @@
+mixin breadcrumbs(text, href, mod)
+  li.breadcrumbs__item
+    if(href)
+      a.breadcrumbs__link(href=href class=mod ? 'breadcrumbs__link--slash': "") #{text}
+    else
+      span.breadcrumbs__text #{text}
+
+section.breadcrumbs
+  .container
+    ul.breadcrumbs__list
+      if pageClass === 'catalog-page'
+        +breadcrumbs('Главная страница', 'index.html')
+        +breadcrumbs('Каталог книг')
+
+      if pageClass === 'book-page'
+        +breadcrumbs('Главная страница', 'index.html')
+        +breadcrumbs('Каталог книг', 'catalog.html', true)
+        +breadcrumbs(title)

@@ -1,0 +1,12 @@
+extends layout/layout
+
+block variables
+  title= "Каталог"
+  - let pageClass = "catalog-page"
+  - let userLogin = false
+
+block content
+
+  main(class= pageClass)
+    include modules/breadcrumbs
+    include modules/catalog/catalog

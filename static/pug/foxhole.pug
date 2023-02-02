@@ -1,0 +1,13 @@
+extends layout/layout
+
+block variables
+  - var title= "Лисья нора"
+  - let pageClass = "book-page"
+  - let userLogin = true
+
+block content
+  main(class= pageClass)
+    include modules/breadcrumbs
+    include modules/books/book/foxhole
+    include modules/reviews/critique
+    include modules/recently-viewed/recently-viewed

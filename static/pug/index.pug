@@ -1,0 +1,14 @@
+extends layout/layout
+
+block variables
+  title= "Главная"
+  - let pageClass = "index-page"
+  - let userLogin = false
+
+block content
+  main(class= pageClass)
+    include modules/hero
+    include modules/books/new-books/new-books
+    include modules/books/best-books/best-books
+    include modules/reviews/reviews
+    include modules/about

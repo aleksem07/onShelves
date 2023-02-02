@@ -1,0 +1,16 @@
+extends layout/layout
+
+block variables
+  - var title= "Железный король"
+  - let pageClass = "book-page"
+  - let userLogin = true
+
+block content
+  main(class= pageClass)
+    include modules/breadcrumbs
+    include modules/books/book/book
+    include modules/reviews/critique
+    include modules/recently-viewed/recently-viewed
+
+
+
